@@ -27,7 +27,7 @@ function TodoItem({ id, text, completed, date }) {
             onChange={(e) => setValue(e.target.value)}
           />
           <SaveIcon
-            sx={{ fontSize: 50 }}
+            sx={{ fontSize: 50, cursor: "pointer" }}
             onClick={() => {
               dispatch(changeTodo({ id, value }))
               setEdit(false)
@@ -51,9 +51,12 @@ function TodoItem({ id, text, completed, date }) {
           </Typography>
           <DeleteIcon
             onClick={() => dispatch(removeTodo({ id }))}
-            sx={{ fontSize: 30 }}
+            sx={{ fontSize: 30, cursor: "pointer" }}
           />
-          <BorderColorIcon onClick={() => setEdit(true)} />
+          <BorderColorIcon
+            sx={{ cursor: "pointer" }}
+            onClick={() => setEdit(true)}
+          />
           <Typography
             component="span"
             variant="subtitle1"
